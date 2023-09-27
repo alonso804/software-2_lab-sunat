@@ -8,6 +8,7 @@ dotenv.config();
 const envVariablesSchema = z.object({
   PORT: z.string().regex(/^\d+$/).default('3000'),
   MONGO_URI: z.string().url(),
+  JWT_SECRET: z.string(),
 });
 
 const parsedEnvVariables = envVariablesSchema.safeParse(process.env);
